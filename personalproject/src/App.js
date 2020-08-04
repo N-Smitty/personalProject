@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {HashRouter} from 'react-router-dom';
+import routes from './routes';
 import './App.css';
+import Header from './Components/Header/Header';
+import {connect} from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Better Bulldogs Co</h1>
-        <nav>
-          <span>About</span>
-          <span>Breeding Tools</span>
-          <span>Litters</span>
-          <span>Contact</span>
-          <img src='//img1.wsimg.com/isteam/ip/35856d4c-013c-42b3-a221-6ed7aabfe8cc/front.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25' alt='mainImg'/>
-        </nav>
-      </header>
-    </div>
-  );
-}
+function App(props) {
+    
+      return (
+        <HashRouter>
+          <div className='App'>
+            <Header/>
+            {routes}
+          </div>
 
-export default App;
+        </HashRouter>
+
+      )
+    } 
+
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(App);

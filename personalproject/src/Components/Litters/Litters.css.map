@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,UAAU,EAAE,IAAI;EAChB,SAAS,EAAC,IAAI;CACjB",
+    "sources": [
+        "Litters.scss"
+    ],
+    "names": [],
+    "file": "Litters.css"
+}
