@@ -4,9 +4,9 @@ import routes from './routes';
 import './App.css';
 import Header from './Components/Header/Header';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 function App(props) {
-    
       return (
         <HashRouter>
           <div className='App'>
@@ -17,7 +17,7 @@ function App(props) {
         </HashRouter>
 
       )
-    } 
+    }
 
 const mapStateToProps = state => state
 

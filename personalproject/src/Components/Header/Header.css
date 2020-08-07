@@ -1,1 +1,92 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
+.main-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+  width: 100%;
+  background-color: white;
+  position: initial;
+}
+
+h1 {
+  color: #AD8587;
+  cursor: pointer;
+  font-weight: 200;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+}
+
+a:hover, a:focus {
+  color: rosybrown;
+}
+
+.about-dropdown {
+  background-color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+}
+
+.litters-dropdown {
+  background-color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+}
+
+.about-dropdown:hover, .about-dropdown:focus {
+  color: rosybrown;
+}
+
+.litters-dropdown:hover, .litters-dropdown:focus {
+  color: rosybrown;
+}
+
+.dropdownView {
+  display: initial;
+  width: 12vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  position: fixed;
+  top: 65px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 2rem;
+  padding-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Header.css.map */

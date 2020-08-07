@@ -1,1 +1,19 @@
-/* No CSS *//*# sourceMappingURL=Home.css.map */
+.image-holder {
+  background-image: url("https://www.inquirer.com/resizer/fkVlQFhmcBV2DUjhywyD7rLUJOc=/1400x932/smart/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/AINEFWAOGBFCRLWZEHB64JKRE4.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Home.css.map */

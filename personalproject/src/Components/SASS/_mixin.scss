@@ -1,0 +1,20 @@
+@mixin flexOne($space){
+    display: flex;
+    justify-content: $space ;
+    align-items: center;
+}
+
+@mixin font() {
+    color: $blackCoral;
+    font-size: 15px;
+    font-family: aktiv-grotesk,arial,sans-serif;
+}
+
+@mixin button() {
+    background-color: $queenPink;
+    color: white;
+    border: none;
+    padding: 1px 6px;
+    cursor: pointer;
+    text-align: center;
+}

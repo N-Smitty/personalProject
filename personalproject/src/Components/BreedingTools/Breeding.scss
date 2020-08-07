@@ -1,0 +1,78 @@
+@import '../SASS/mixin';
+@import '../SASS/variables';
+
+.form {
+    background-color: $cultured;
+    color: $blackCoral;
+    height: 100vh;
+    padding-bottom: 50px;
+    @include flexOne(space-evenly);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 4rem;
+    width: 50%;
+}
+
+h4 {
+    font-size: 40px;
+    text-align: center;
+    color: $blackCoral;
+}
+
+h5 {
+    font-size: 30px;
+    text-align: center;
+    color: $blackCoral;
+}
+
+.form-inputs {
+    border-color: $silverSand;
+    border-radius: 5px;
+    height: 4em;
+}
+
+.form-inputs:hover {
+    border-color: $rosyBrown;
+    box-shadow: 4px 2px 2px 2px $queenPink;
+
+}
+
+.form-button {
+    @include button();
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    
+}
+
+.form-button:hover {
+    background-color: $rosyBrown;
+}
+
+.view1-btns, .view2-btns, .view3-btns, .view4-btns {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+}
+
+.start-btn {
+
+}
+
+.checkbox-inputs {
+    line-height: 7rem;
+    background-color: white;
+    border-color: $silverSand;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+// .checkbox-inputs:hover {
+//     border-color: $rosyBrown;
+//     box-shadow: 4px 2px 2px 2px $queenPink;
+// }

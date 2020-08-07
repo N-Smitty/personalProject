@@ -1,6 +1,7 @@
+// import {PROP_INFO, IMG_INFO} from './constraints';
 
 const initialState = {
-
+    
 };
 
 
