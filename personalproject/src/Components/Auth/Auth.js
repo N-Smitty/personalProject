@@ -3,8 +3,6 @@
 //On the Client-side, authentication is important because it allows us as developers to create a personalized experience for each user. Remember that when a user logs in or registers, the server will send back the users session. This contains information that we can then use to tailor the website towards that specific user. An example of this would be viewing you and your friends posts on social media, instead of random posts found throughout the site. It's tailored to information relevant to you as the user.
 import React, {Component} from 'react';
 import axios from 'axios';
-// import './Breeding.scss';
-
 class Auth extends Component {
     constructor(props){
         super(props);
