@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import './Header.scss';
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
-import Auth from '../Auth/Auth';
 
 
 class Header extends Component {
@@ -91,7 +90,7 @@ class Header extends Component {
             </nav>
                 <nav >
                 <Link to='/Progesterone'>
-                <span>Breeding Tools</span>
+                <span>Progesterone Tracker</span>
                 </Link>
                 </nav>
                 <nav >
@@ -100,8 +99,7 @@ class Header extends Component {
                 </Link>
                 </nav>
                 <div>
-                <Auth/>
-                <button onClick={this.handleLogout}>Logout</button>
+                <button className='logout-btn' onClick={this.handleLogout}>Logout</button>
                 </div>
             </header>
         )

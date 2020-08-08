@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../Auth/Auth';
 import './Breeding.scss';
 
 class view3 extends Component {
@@ -9,9 +10,10 @@ class view3 extends Component {
         return (
 
             <div className='form'>
-                <section>
+                <section className='registerLogin'>
                 <h5>We're Almost Done</h5>
-                <p>You are one step away from seeing your breeding results.</p>
+                <p>You are one step away from seeing your breeding results. Please register or login to view results.</p>
+                <Auth/>
                 <div className='view3-btns'>
                     <Link to='/View2'>
                         <button className='form-button'>Prev</button>

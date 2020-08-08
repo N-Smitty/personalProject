@@ -22,6 +22,10 @@ h1 {
     text-transform: uppercase;
 }
 
+h1:hover {
+    color: $palePink;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -47,6 +51,7 @@ a:hover, a:focus {
     padding: 16px;
     border: none;
     cursor: pointer;
+    transition: all 0.5s ease;
     @include font();
 }
 

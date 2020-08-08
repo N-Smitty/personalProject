@@ -3,6 +3,7 @@
 //On the Client-side, authentication is important because it allows us as developers to create a personalized experience for each user. Remember that when a user logs in or registers, the server will send back the users session. This contains information that we can then use to tailor the website towards that specific user. An example of this would be viewing you and your friends posts on social media, instead of random posts found throughout the site. It's tailored to information relevant to you as the user.
 import React, {Component} from 'react';
 import axios from 'axios';
+// import './Breeding.scss';
 
 class Auth extends Component {
     constructor(props){
@@ -62,10 +63,12 @@ class Auth extends Component {
         return (
             <div>
                 <input 
+                    placeholder='email'
                     value={this.state.email} 
                     name='email' 
                     onChange={(e) => this.handleInput(e)}/>
                 <input 
+                    placeholder='password'
                     value={this.state.password} 
                     name='password' 
                     onChange={(e) => this.handleInput(e)}/>
@@ -73,11 +76,11 @@ class Auth extends Component {
                 {this.state.registerView
                 ? (<>
                     <button onClick={this.handleRegister}>Register</button>
-                    <p>Already have an account? <span onClick={this.handleToggle}>Login here</span></p>
+                    <p>Already have an account? <span className='login-toggle' onClick={this.handleToggle}>Login here</span></p>
                     </>)
                 : (<>
                     <button onClick={this.handleLogin}>Login</button>
-                    <p>Don't have an account? <span onClick={this.handleToggle}>Register here</span></p>
+                    <p>Don't have an account? <span className='register-toggle' onClick={this.handleToggle}>Register here</span></p>
                     </>)}
             </div>
         )

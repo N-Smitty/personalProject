@@ -18,3 +18,14 @@
     cursor: pointer;
     text-align: center;
 }
+
+@mixin column() {
+    display: flex;
+    flex-direction: column;
+    line-height: 4rem;
+}
+
+@mixin hoverShadow() {
+    border-color: $rosyBrown;
+    box-shadow: 4px 2px 2px 2px $palePink;
+}

@@ -12,11 +12,11 @@ class view2 extends Component {
                 <section className='form-container'>
                     <h4>Progesterone Tracker</h4>
                 <label>Date Taken</label>
-                <input placeholder='mm/dd/yyyy'></input>
+                <input className='form-inputs' placeholder='mm/dd/yyyy'></input>
                 <label>Time Taken</label>
-                <input placeholder='hh:mm'></input>
+                <input className='form-inputs' placeholder='hh:mm'></input>
                 <label>Nanograms/Milliliters</label>
-                <input placeholder='ng/ml'></input>
+                <input className='form-inputs' placeholder='ng/ml'></input>
                 <div className='view2-btns'>
                     <Link to='/View1'>
                         <button className='form-button'>Prev</button>

@@ -28,9 +28,9 @@ class progesterone extends Component {
                 <input className='form-inputs' placeholder='Enter Breed'></input>
                 <label>Heat</label>
                 <input className='form-inputs' placeholder='Number of Heat'></input>
-                <div className='start-btn'>
+                <div className='btn-spacing'>
                 <Link to='/view1'>
-                <button className='form-button'>Get Started</button>
+                <button className='start-btn'>Get Started</button>
                 </Link>
                 </div>
             </section>
