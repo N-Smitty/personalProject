@@ -11,3 +11,5 @@ $3,
 $4,
 $5
 );
+
+returning * where dog_id = $1;

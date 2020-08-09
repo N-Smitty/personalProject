@@ -31,7 +31,11 @@ class Auth extends Component {
         .then(res => {
             //Place user information somewhere(state, reduxState)
             //React-router-dom moves the user to dash
-            this.props.history.push('/Progesterone')
+            if(this.props.routedFrom === "View3") {
+                this.props.history.push("/View4");
+            } else {
+                this.props.history.push('/Progesterone');
+            }
         })
         .catch(err => console.log(err));
     }
@@ -51,7 +55,11 @@ class Auth extends Component {
             //Place user object on state or reduxState
 
             //Route user to main page
-            this.props.history.push('/Progesterone');
+            if(this.props.routedFrom === "View3") {
+                this.props.history.push("/View4");
+            } else {
+                this.props.history.push('/Progesterone');
+            }
         })
         .catch(err => console.log(err))
     }

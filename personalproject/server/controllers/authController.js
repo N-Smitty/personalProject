@@ -11,7 +11,7 @@ module.exports = {
         const db = req.app.get('db');
         console.log('hit')
         //2. Ensuring users can't create duplicate accounts. This is done by querying the database to see if the email the server received from req.body exists in the database. If it does, send a response to the client-side informing the user the email is already in use.
-        let foundUser = await db.existing_users(email);
+        let foundUser = await db.users.find_user(email);
         console.log('founduser', foundUser)
         if(foundUser[0]){
             return res.status(400).send('Email already in use')
@@ -21,7 +21,7 @@ module.exports = {
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);
         console.log(email, hash)
-        let newUser = await db.register_users(email, hash);
+        let newUser = await db.users.add_user(email, hash);
 
         //4. Creating an active session for the user, and sending it to the client-side(question 5 on the readme).
         req.session.user = newUser[0];
@@ -35,7 +35,7 @@ module.exports = {
         const db = req.app.get('db');
 
         //2. Ensure the user exists in the database by querying the database with the email received from req.body. If the user is not in the database, send a response to the client-side informing the user they need to register.
-        let foundUser = await db.existing_users(email);
+        let foundUser = await db.users.find_user(email);
         if(!foundUser[0]){
             return res.status(400).send("Email doesn't exist in database")
         }

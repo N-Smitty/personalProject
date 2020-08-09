@@ -1,31 +1,10 @@
-create table register_users (
+create table users (
 user_id serial primary key,
-first_name varchar(300),
-last_name varchar(300),
-email varchar(250),
-password varchar(250)
-);
-
-insert into register_users (
-first_name,
-last_name,
-email,
-password
-) values (
-'Natalie',
-'Smith',
-'natalie@smithbunch.org',
-'password'
-);
-
-select * from register_users
-
-create table existing_users (
 email varchar(250),
 password varchar (250)
 );
 
-insert into existing_users (
+insert into users (
 email,
 password
 ) values (
@@ -33,14 +12,15 @@ password
 'testing'
 );
 
-select * from existing_users
+-- select * from existing_users
 
-create table dog_profile (
-dog_id serial primary key,
-dog_name varchar(150),
-dog_age int,
-breed varchar(250),
-heat_number int
+CREATE TABLE dog_profile (
+dog_id SERIAL PRIMARY KEY,
+dog_name VARCHAR(150),
+dog_age INT,
+breed VARCHAR(250),
+heat_number INT,
+user_id INT REFERENCES users
 );
 
 insert into dog_profile (

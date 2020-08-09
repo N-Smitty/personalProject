@@ -1,4 +1,4 @@
-insert into register_users (
+insert into users (
 email,
 password
 ) values (
