@@ -16,10 +16,10 @@ const UPDATE_DOGS = "UPDATE_DOGS";
 
 // action builders
 export function updateDogs(data) {
-    return {
-        type: UPDATE_DOGS,
-        payload:data,
-    };
+  return {
+    type: UPDATE_DOGS,
+    payload: data,
+  };
 }
 
 //reducer
