@@ -15,7 +15,9 @@ import View1 from './Components/BreedingTools/view1';
 import View2 from './Components/BreedingTools/view2';
 import View3 from './Components/BreedingTools/view3';
 import View4 from './Components/BreedingTools/view4';
-
+import AccountView from './Components/Auth/AccountView';
+import DogProfile from './Components/Auth/DogProfile';
+import DogList from './Components/Auth/DogList';
 
 export default (
     <Switch>
@@ -34,5 +36,8 @@ export default (
         <Route path='/view2' component={View2}/>
         <Route path='/view3' component={View3}/>
         <Route path='/view4' component={View4}/>
+        <Route path='/AccountView' component={AccountView}/>
+        <Route path='/DogProfile' component={DogProfile}/>
+        <Route path='/DogList' component={DogList}/>
     </Switch>
 )

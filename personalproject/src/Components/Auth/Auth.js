@@ -62,8 +62,9 @@ class Auth extends Component {
       })
       //Like handleRegister, the response is the active users session. This needs to be placed on state or reduxState so it can be used throughout the application.
       .then((res) => {
+        // console.log(res.data, 'daterrr')
         //Place user object on state or reduxState
-
+        this.props.updateUser(res.data)
         //Route user to main page
         if (this.props.routedFrom === "View3") {
           this.props.history.push("/View4");
@@ -136,3 +137,7 @@ let mapStateToProps = (state) => {
   return state;
 };
 export default connect(mapStateToProps, { updateUser })(Auth);
+
+
+// after register is clicked they should be redirected to create a DogProfile! Where do I redirect that?
+// after login reroute to home. Where do I redirect that?

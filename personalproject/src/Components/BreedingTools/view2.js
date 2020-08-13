@@ -16,7 +16,7 @@ class view2 extends Component {
                 <label>Time Taken</label>
                 <input className='form-inputs' placeholder='hh:mm'></input>
                 <label>Nanograms/Milliliters</label>
-                <input className='form-inputs' placeholder='ng/ml'></input>
+                <input placeholder='ng/ml'></input>
                 <div className='view2-btns'>
                     <Link to='/View1'>
                         <button className='form-button'>Prev</button>

@@ -49,7 +49,7 @@ module.exports = {
         //4. If the users password is correct, delete the password(it is not needed past this point, and should never go to the client-side). Create a user session and send that session to the client-side.
         delete foundUser[0].password;
         req.session.user = foundUser[0];
-        // console.log(req.session.user);
+        console.log(req.session.user);
         res.status(202).send(req.session.user);
     },
     //The logout function is the clean-up function. Specifically, it removes a users session, making it inactive. This is done through the 'destroy' method found on req.session. Simply send a status code to the client side to let the client-side know it was completed.

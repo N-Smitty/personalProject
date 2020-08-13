@@ -12,7 +12,6 @@ class view3 extends Component {
                 <section className='registerLogin'>
                 <h5>We're Almost Done</h5>
                 <p>You are one step away from seeing your breeding results. Please register or login to view results.</p>
-                <Auth routedFrom="View3"/>
                 {/* <div className='view3-btns'>
                     <Link to='/View2'>
                         <button className='form-button'>Prev</button>
