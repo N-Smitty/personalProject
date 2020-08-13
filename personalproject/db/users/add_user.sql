@@ -1,8 +1,12 @@
 insert into users (
-email,
-password
+    first_name,
+    last_name,
+    email,
+    password
 ) values (
     $1,
-    $2
+    $2,
+    $3,
+    $4
 )
-returning *
+returning first_name, last_name, email;

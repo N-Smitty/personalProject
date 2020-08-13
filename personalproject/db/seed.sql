@@ -1,15 +1,21 @@
 create table users (
-user_id serial primary key,
-email varchar(250),
-password varchar (250)
+    user_id serial primary key,
+    first_name varchar(64),
+    last_name varchar(64),
+    email varchar(250),
+    password varchar (250)
 );
 
 insert into users (
-email,
-password
+    first_name,
+    last_name,
+    email,
+    password
 ) values (
-'natalie@testing.com',
-'testing'
+    'hello',
+    'world',
+    'natalie@testing.com',
+    'testing'
 );
 
 -- select * from existing_users

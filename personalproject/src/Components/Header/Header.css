@@ -1,3 +1,7 @@
+.nav-bar__height {
+  height: 60px;
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,7 +17,8 @@
   font-family: aktiv-grotesk,arial,sans-serif;
   width: 100%;
   background-color: white;
-  position: initial;
+  position: fixed;
+  height: 60px;
 }
 
 h1 {
@@ -36,7 +41,8 @@ a {
   font-family: aktiv-grotesk,arial,sans-serif;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: rosybrown;
 }
 
@@ -62,11 +68,13 @@ a:hover, a:focus {
   font-family: aktiv-grotesk,arial,sans-serif;
 }
 
-.about-dropdown:hover, .about-dropdown:focus {
+.about-dropdown:hover,
+.about-dropdown:focus {
   color: rosybrown;
 }
 
-.litters-dropdown:hover, .litters-dropdown:focus {
+.litters-dropdown:hover,
+.litters-dropdown:focus {
   color: rosybrown;
 }
 

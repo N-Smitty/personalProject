@@ -1,5 +1,11 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import promiseMiddleware from 'redux-promise-middleware';
 
-import reducer from "./reducer";
+import dog from "./dogReducer";
+import user from "./userReducer";
 
-export default createStore(reducer);
+const rootReducer = combineReducers({
+    dog, 
+    user
+})
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware));

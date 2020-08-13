@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import "./Breeding.scss";
 
-import { updateInsemination } from "../../Redux/reducer";
+import { updateInsemination } from "../../Redux/dogReducer";
 class view1 extends Component {
   constructor() {
     super();

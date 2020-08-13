@@ -8,6 +8,8 @@ const massive = require("massive"),
   mainCtrl = require("./controllers/mainController"),
   authCtrl = require("./controllers/authController"),
   dogCtrl = require("./controllers/dogController"),
+  // stripeCtrl = require('../server/controllers/stripe/stripeController'),
+
   session = require("express-session"),
   { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -21,6 +23,7 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
   })
 );
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {
@@ -44,6 +47,7 @@ app.put("/api/dog/update", dogCtrl.getResults);
 // app.delete('/dog/delete/:dog_Id', dogCtrl.deleteDog)
 // app.put('/dog/:dog_Id', dogCtrl.updateDogs)
 app.get("/api/results", dogCtrl.getResults);
+// app.post('/api/payment', stripeCtrl.payment);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Natalie's server is tuned in on port ${SERVER_PORT}`);

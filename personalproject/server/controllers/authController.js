@@ -7,7 +7,7 @@ module.exports = {
     //The register function has four sections of code to focus on:
     register: async(req, res) => {
         //1. Setup of what the function needs to work(what it's receiving from the client-side, and getting the db)
-        const {email, password} = req.body;
+        const {first, last, email, password} = req.body;
         const db = req.app.get('db');
         console.log('hit')
         //2. Ensuring users can't create duplicate accounts. This is done by querying the database to see if the email the server received from req.body exists in the database. If it does, send a response to the client-side informing the user the email is already in use.
@@ -21,7 +21,7 @@ module.exports = {
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);
         console.log(email, hash)
-        let newUser = await db.users.add_user(email, hash);
+        let newUser = await db.users.add_user(first, last, email, hash);
 
         //4. Creating an active session for the user, and sending it to the client-side(question 5 on the readme).
         req.session.user = newUser[0];

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Breeding.scss";
 
-import { updateAboutDog } from "../../Redux/reducer";
+import { updateAboutDog } from "../../Redux/dogReducer";
 import { connect } from "react-redux";
 
 class progesterone extends Component {
@@ -55,7 +55,7 @@ class progesterone extends Component {
             <Link to="/view1">
               <button
                 className="start-btn"
-                onClick={this.props.updateAboutDog({ ...this.state })}
+                onClick={() => this.props.updateAboutDog({ ...this.state })}
               >
                 Get Started
               </button>

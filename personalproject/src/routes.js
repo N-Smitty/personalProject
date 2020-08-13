@@ -8,7 +8,7 @@ import BreedingTools from './Components/BreedingTools/Progesterone';
 import Results from './Components/BreedingTools/results';
 import Contact from './Components/Contact/Contact';
 import Gallery from './Components/Litters/Gallery';
-import Available from './Components/Litters/Available';
+import Stud from './Components/BreedingTools/Stud';
 import Litters from './Components/Litters/Pricing';
 import Auth from './Components/Auth/Auth';
 import View1 from './Components/BreedingTools/view1';
@@ -28,7 +28,7 @@ export default (
         <Route path='/Contact' component={Contact}/>
         <Route path='/Pricing' component={Litters}/>
         <Route path='/Gallery' component={Gallery}/>
-        <Route path='/Available' component={Available}/>
+        <Route path='/Stud' component={Stud}/>
         <Route path='/Auth' component={Auth}/>
         <Route path='/view1' component={View1}/>
         <Route path='/view2' component={View2}/>
