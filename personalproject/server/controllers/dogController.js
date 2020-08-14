@@ -66,15 +66,34 @@ const breeding = (type, ngMl) => {
 
 module.exports = {
   createDog: async (req, res) => {
-    const { dog_name, dog_age, breed, heat_number } = req.body;
-    const db = req.app.get("db");
-    const dog_id = await db.dog_profile({
+    const {
       dog_name,
       dog_age,
       breed,
       heat_number,
-    });
-    return res.dog_id;
+      insemination_type,
+      ng_ml,
+      // date_taken,
+      // time_taken,
+    } = req.body;
+    const db = req.app.get("db");
+    const { user_id } = req.session.user;
+    const [dog_id] = await db.dog_profile(
+      dog_name,
+      dog_age,
+      breed,
+      heat_number,
+      user_id
+    );
+    console.log(dog_id);
+    await db.breeding_info(
+      dog_id.dog_id,
+      insemination_type,
+      ng_ml,
+      // date_taken,
+      // time_taken
+    );
+    return res.sendStatus(200);
   },
   getResults: async (req, res) => {
     const { insemination, nanograms, dateTaken, timeTaken, dogId } = req.body;
@@ -90,5 +109,20 @@ module.exports = {
 
     let textResponse = breeding(insemination_type, ng_ml);
     return res.status(200).send({ results, textResponse });
+  },
+  deleteDog: async (req, res) => {
+    const db = req.app.get("db");
+    const { dog_Id } = req.params;
+    await db.delete_breeding_info(dog_Id)
+    db.delete_dog(dog_Id).then((results) => {
+      res.status(200).send(results);
+    });
+  },
+  getDogProfile: async (req, res) => {
+    const db = req.app.get("db");
+    const { user_id } = req.session.user;
+    db.get_profile(user_id).then((results) => {
+      res.status(200).send(results);
+    });
   },
 };

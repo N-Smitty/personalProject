@@ -15,7 +15,7 @@ class Auth extends Component {
       email: "",
       password: "",
       //registerView will allow this component between a login and register view, meaning I don't have to create separate components for login and register.
-      registerView: true,
+      registerView: false,
       //user: {}
     };
   }
@@ -37,11 +37,8 @@ class Auth extends Component {
         this.props.updateUser(res.data);
         //Place user information somewhere(state, reduxState)
         //React-router-dom moves the user to dash
-        if (this.props.routedFrom === "View3") {
-          this.props.history.push("/View4");
-        } else {
-          this.props.history.push("/Progesterone");
-        }
+          this.props.history.push("/Form");
+
       })
       .catch((err) => console.log(err));
   };
@@ -66,11 +63,8 @@ class Auth extends Component {
         //Place user object on state or reduxState
         this.props.updateUser(res.data)
         //Route user to main page
-        if (this.props.routedFrom === "View3") {
-          this.props.history.push("/View4");
-        } else {
           this.props.history.push("/Progesterone");
-        }
+    
       })
       .catch((err) => console.log(err));
   };

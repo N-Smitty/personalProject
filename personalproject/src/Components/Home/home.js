@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Home.scss'
-import Home from './leoBella.jpg'
+import pic from './leoBella.jpg'
 
 
-class home extends Component {
+class Home extends Component {
 
     render() {
         return (
             <div>
-            <img src={Home} alt='mainPhoto' className='image-holder' />
+            <img src={pic} alt='mainPhoto' className='image-holder' />
             <section className='faq'>
                     <h5>FAQ's</h5>
                 <div>
@@ -26,4 +26,4 @@ class home extends Component {
     }
 }
 
-export default home;
+export default Home;

@@ -8,8 +8,7 @@ time_taken
 $1,
 $2,
 $3,
-$4,
-$5
+CURRENT_DATE,
+CURRENT_TIMESTAMP
 );
 
-returning * where dog_id = $1;

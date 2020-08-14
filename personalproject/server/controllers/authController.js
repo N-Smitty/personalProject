@@ -57,5 +57,15 @@ module.exports = {
         req.session.destroy();
         // console.log(req.session);
         res.sendStatus(200);
+    },
+    editProfile: (req, res) => {
+        const db = req.app.get('db')
+        const {first_name, last_name, email} = req.body
+        const { user_id } = req.session.user;
+        db.users.edit_profile(first_name, last_name, email, user_id).then((user) => {
+            req.session.user= user[0]
+            res.status(200).send(req.session.user)
+        })
+
     }
 }

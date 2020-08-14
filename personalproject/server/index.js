@@ -42,10 +42,11 @@ app.post("/api/register", authCtrl.register);
 app.post("/api/login", authCtrl.login);
 app.get("/api/logout", authCtrl.logout);
 //dog profile endpoints
-app.put("/api/dog/update", dogCtrl.getResults);
-// app.post('/api/createDog', dogCtrl.createDog)
-// app.delete('/dog/delete/:dog_Id', dogCtrl.deleteDog)
-// app.put('/dog/:dog_Id', dogCtrl.updateDogs)
+// app.put("/api/dog/update", dogCtrl.getResults);
+app.get('/api/dog/profile', dogCtrl.getDogProfile)
+app.post('/api/createDog', dogCtrl.createDog)
+app.delete('/dog/delete/:dog_Id', dogCtrl.deleteDog)
+app.put('/api/user/update', authCtrl.editProfile)
 app.get("/api/results", dogCtrl.getResults);
 // app.post('/api/payment', stripeCtrl.payment);
 
