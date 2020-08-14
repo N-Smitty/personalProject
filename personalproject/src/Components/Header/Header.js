@@ -103,6 +103,11 @@ class Header extends Component {
               <span>Contact</span>
             </Link>
           </nav>
+          <nav>
+            <Link to='/AccountView'>
+            <span>Account</span>
+            </Link>
+          </nav>
           {/* <div>
                 <button className='logout-btn' onClick={this.handleLogout}>Logout</button>
                 </div> */}
