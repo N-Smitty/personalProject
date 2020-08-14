@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class results extends Component {
+class PostResults extends Component {
 
 
     render() {
@@ -16,4 +16,4 @@ class results extends Component {
 
 }
 
-export default results
+export default PostResults;

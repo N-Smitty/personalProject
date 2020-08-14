@@ -138,6 +138,6 @@ let mapStateToProps = (state) => {
 };
 export default connect(mapStateToProps, { updateUser })(Auth);
 
-
+// Make login be the default instead of register
 // after register is clicked they should be redirected to create a DogProfile! Where do I redirect that?
 // after login reroute to home. Where do I redirect that?
