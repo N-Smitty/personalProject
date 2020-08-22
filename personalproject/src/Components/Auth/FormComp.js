@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { Segment, Button, Input, Form, Container } from "semantic-ui-react";
 
-class Form extends Component {
+class FormComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,9 +12,9 @@ class Form extends Component {
       breed: "",
       heat_number: "",
       insemination_type: "",
-      ng_ml: "",
-      date_taken: "",
-      time_taken: "",
+      //   ng_ml: "",
+      //   date_taken: "",
+      //   time_taken: "",
     };
   }
 
@@ -31,60 +33,52 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
-        <input
+      <Form>
+        <Input type="file" />
+        <Input
+          icon="heart outline"
+          iconPosition="left"
           name="dog_name"
           value={this.state.dog_name}
           onChange={this.handleChange}
-          placeholder=""
+          placeholder="Dog Name"
         />
-        <input
+        <Input
+          icon="calendar outline"
+          iconPosition="left"
           name="dog_age"
           value={this.state.age}
           onChange={this.handleChange}
-          placeholder="dog_age"
+          placeholder="Dog Age"
         />{" "}
-        <input
+        <Input
+          icon="info"
+          iconPosition="left"
           name="breed"
           value={this.state.breed}
           onChange={this.handleChange}
-          placeholder=""
+          placeholder="Breed"
         />{" "}
-        <input
+        <Input
+          icon="hashtag"
+          iconPosition="left"
           name="heat_number"
           value={this.state.heat_number}
           onChange={this.handleChange}
-          placeholder="heat_number"
+          placeholder="Number of Heat"
         />{" "}
-        <input
+        {/* <input
           name="insemination_type"
           value={this.state.insemination_type}
           onChange={this.handleChange}
           placeholder=""
-        />{" "}
-        <input
-          name="ng_ml"
-          value={this.state.ng_ml}
-          onChange={this.handleChange}
-          placeholder="ng_ml"
-        />{" "}
-        <input
-          name="date_taken"
-          value={this.state.date_taken}
-          onChange={this.handleChange}
-          placeholder=""
-        />{" "}
-        <input
-          name="time_taken"
-          value={this.state.time_taken}
-          onChange={this.handleChange}
-          placeholder="time_taken"
-        />
-        <button onClick={this.createDog}>Add Dog</button>
-        <button>Save Changes</button>
-      </div>
+        />{" "} */}
+        <Link to="/AccountView">
+          <Button onClick={this.createDog}>Add Dog</Button>
+        </Link>
+      </Form>
     );
   }
 }
 
-export default Form;
+export default FormComp;

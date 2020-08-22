@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Segment, Container } from "semantic-ui-react";
+
 
 
 class aboutStandards extends Component {
     render() {
         return (
-            <div className='aboutStandards'>
+            <Container className='aboutStandards'>
                 About AKC Standards
                 
-            </div>
+            </Container>
         )
     }
 }

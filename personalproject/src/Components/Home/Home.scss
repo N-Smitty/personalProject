@@ -1,4 +1,5 @@
-
+@import "../SASS/mixin";
+@import "../SASS/variables";
 
 .image-holder {
     background-image: url('https://www.inquirer.com/resizer/fkVlQFhmcBV2DUjhywyD7rLUJOc=/1400x932/smart/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/AINEFWAOGBFCRLWZEHB64JKRE4.jpg');
@@ -13,4 +14,31 @@
     align-items: center;
 }
 
+.faq{
+    @include flexOne(space-evenly);
+    @include font();
+    width: 100%;
+    background-color:$cultured;
+}
 
+.steps {
+    @include font();
+    width: 100%;
+    background-color:$cultured;
+}
+
+
+.footer{
+    @include flexOne(space-evenly);
+    @include font();
+    width: 100%;
+    background-color: #A0BAB3;
+    height: 50px;
+}
+
+.about-us {
+    @include flexOne(space-evenly);
+    @include font();
+    width: 100%;
+    background-color: white;
+}

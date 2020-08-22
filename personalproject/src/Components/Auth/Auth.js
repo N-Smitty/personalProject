@@ -5,6 +5,17 @@ import React, { Component } from "react";
 import axios from "axios";
 import { updateUser } from "../../Redux/userReducer";
 import { connect } from "react-redux";
+import floral from "./floral.jpg";
+import {
+  Segment,
+  Container,
+  Button,
+  Input,
+  Form,
+  Icon,
+  Message,
+} from "semantic-ui-react";
+
 class Auth extends Component {
   constructor(props) {
     super(props);
@@ -37,8 +48,7 @@ class Auth extends Component {
         this.props.updateUser(res.data);
         //Place user information somewhere(state, reduxState)
         //React-router-dom moves the user to dash
-          this.props.history.push("/Form");
-
+        this.props.history.push("/Form");
       })
       .catch((err) => console.log(err));
   };
@@ -59,70 +69,105 @@ class Auth extends Component {
       })
       //Like handleRegister, the response is the active users session. This needs to be placed on state or reduxState so it can be used throughout the application.
       .then((res) => {
-        // console.log(res.data, 'daterrr')
+        console.log(res.data, "daterrr");
         //Place user object on state or reduxState
-        this.props.updateUser(res.data)
+        this.props.updateUser(res.data);
         //Route user to main page
-          this.props.history.push("/Progesterone");
-    
+        this.props.history.push("/Progesterone");
       })
       .catch((err) => console.log(err));
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
-      <div>
+      <div className="form-container">
+        {/* <div>
+        <img src={floral} alt="floral" className="floral-image" />
+      </div> */}
         {this.state.registerView ? (
           <>
-            <input
-              placeholder="First name"
-              value={this.state.first}
-              name="first"
-              onChange={(e) => this.handleInput(e)}
+            <Message
+              attached
+              header="Welcome to our site!"
+              content="Fill out the form below to sign-up for a new account"
             />
-            <input
-              placeholder="Last name"
-              value={this.state.last}
-              name="last"
-              onChange={(e) => this.handleInput(e)}
-            />
+            <Form className="attached fluid segment">
+              <Form.Group widths="equal">
+                <Form.Input
+                  icon="user"
+                  iconPosition="left"
+                  fluid
+                  label="First Name"
+                  value={this.state.first}
+                  name="first"
+                  onChange={(e) => this.handleInput(e)}
+                  placeholder="First Name"
+                  type="text"
+                />
+                <Form.Input
+                  icon="user outline"
+                  iconPosition="left"
+                  fluid
+                  label="Last Name"
+                  placeholder="Last Name"
+                  type="text"
+                  value={this.state.last}
+                  name="last"
+                  onChange={(e) => this.handleInput(e)}
+                />
+              </Form.Group>
+            </Form>
           </>
         ) : null}
-        <input
-          placeholder="email"
-          value={this.state.email}
-          name="email"
-          onChange={(e) => this.handleInput(e)}
-        />
-        <input
-          placeholder="password"
-          value={this.state.password}
-          name="password"
-          onChange={(e) => this.handleInput(e)}
-        />
-        {/* while the inputs are the same for login and register, the buttons need to switch. That's what this conditional rendering does below */}
-        {this.state.registerView ? (
-          <>
-            <button onClick={this.handleRegister}>Register</button>
-            <p>
-              Already have an account?{" "}
-              <span className="login-toggle" onClick={this.handleToggle}>
-                Login here
-              </span>
-            </p>
-          </>
-        ) : (
-          <>
-            <button onClick={this.handleLogin}>Login</button>
-            <p>
-              Don't have an account?{" "}
-              <span className="register-toggle" onClick={this.handleToggle}>
-                Register here
-              </span>
-            </p>
-          </>
-        )}
+        <Form>
+          <Form.Input
+            icon="envelope outline"
+            iconPosition="left"
+            placeholder="john.smith@gmail.com"
+            value={this.state.email}
+            name="email"
+            onChange={(e) => this.handleInput(e)}
+          />
+          <Form.Input
+            icon="lock"
+            iconPosition="left"
+            placeholder="password"
+            value={this.state.password}
+            name="password"
+            onChange={(e) => this.handleInput(e)}
+          />
+          {/* while the inputs are the same for login and register, the buttons need to switch. That's what this conditional rendering does below */}
+          {this.state.registerView ? (
+            <>
+              <Button className="form-button" onClick={this.handleRegister}>
+                Register
+              </Button>
+              <Message>
+                <Icon name="help" />
+                Already have an account?{" "}
+                <span className="login-toggle" onClick={this.handleToggle}>
+                  Login here
+                </span>
+              </Message>
+            </>
+          ) : (
+            <>
+              <Button className="form-button" onClick={this.handleLogin}>
+                Login
+              </Button>
+              <Message>
+                <Icon name="help" />
+                Don't have an account?{" "}
+                <span className="register-toggle" onClick={this.handleToggle}>
+                  Register here
+                </span>
+              </Message>
+            </>
+          )}
+          <Form.Checkbox inline label="I agree to the terms and conditions" />
+          <Button color="teal">Submit</Button>
+        </Form>
       </div>
     );
   }

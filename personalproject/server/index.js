@@ -1,3 +1,5 @@
+const { default: Axios } = require("axios");
+
 require("dotenv").config();
 const massive = require("massive"),
   express = require("express"),
@@ -40,13 +42,15 @@ massive({
 //authentication endpoints
 app.post("/api/register", authCtrl.register);
 app.post("/api/login", authCtrl.login);
-app.get("/api/logout", authCtrl.logout);
+app.post("/api/logout", authCtrl.logout);
+app.get("/auth/session", authCtrl.getSession);
 //dog profile endpoints
 // app.put("/api/dog/update", dogCtrl.getResults);
-app.get('/api/dog/profile', dogCtrl.getDogProfile)
-app.post('/api/createDog', dogCtrl.createDog)
-app.delete('/dog/delete/:dog_Id', dogCtrl.deleteDog)
-app.put('/api/user/update', authCtrl.editProfile)
+app.get("/api/dog/profile", dogCtrl.getDogProfile);
+app.post("/api/createDog", dogCtrl.createDog);
+app.delete("/dog/delete/:dog_Id", dogCtrl.deleteDog);
+app.put("/api/user/update", authCtrl.editProfile);
+// axios.post('/upload', authCtrl.uploadImage)
 app.get("/api/results", dogCtrl.getResults);
 // app.post('/api/payment', stripeCtrl.payment);
 

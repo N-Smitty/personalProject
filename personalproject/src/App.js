@@ -1,24 +1,35 @@
-import React, { Component } from 'react';
-import {HashRouter} from 'react-router-dom';
-import routes from './routes';
-import './App.css';
-import Header from './Components/Header/Header';
-import {connect} from 'react-redux';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { HashRouter } from "react-router-dom";
+import routes from "./routes";
+import "./App.css";
+import Header from "./Components/Header/Header";
+import { connect } from "react-redux";
+import axios from "axios";
+import {updateUser} from './Redux/userReducer';
+import 'semantic-ui-css/semantic.min.css'
+import { Container } from 'semantic-ui-react'
+
 
 function App(props) {
-      return (
-        <HashRouter>
-          <div className='App'>
-            <Header/>
-            {routes}
-          </div>
+  // useEffect(() => {
+  //   axios.get("/auth/session").then((res) => {
+  //     props.updateUser(res.data);
+  //   });
+  // });
 
-        </HashRouter>
+  return (
+    <Container>
+  <HashRouter>
+      <div className="App">
+        <Header />
+        {routes}
+      </div>
+    </HashRouter>
+    </Container>
+  
+  );
+}
 
-      )
-    }
+const mapStateToProps = (state) => state;
 
-const mapStateToProps = state => state
-
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {updateUser})(App);

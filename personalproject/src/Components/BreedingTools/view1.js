@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import {
+  Segment,
+  Button,
+  Input,
+  Container,
+  Progress,
+  Icon,
+} from "semantic-ui-react";
 import "./Breeding.scss";
 
 import { updateInsemination } from "../../Redux/dogReducer";
@@ -20,104 +27,64 @@ class view1 extends Component {
 
   render() {
     return (
-      <div className="form">
-        <section className="form-container">
-          {this.state.selectedOption}
-          <form>
-            <h4> How do you plan on breeding?</h4>
-            {/* <div className='checkbox-form'>
-                    <input type="checkbox"/>
-                    <label for="toggle">Artificial Insemination</label>
-                    </div> */}
-            {/* <div className='checkbox-form'>
-                    <input type="checkbox"/>
-                    <label for="toggle">Trans-Cervical Insemination</label>
-                    </div>
-                    <div className='checkbox-form'>
-                    <input type="checkbox"/>
-                    <label for="toggle"> Surgical Insemination</label>
-                    </div> */}
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            />
-            <div className="center">
-              <label className="label">
-                {" "}
-                Artificial Insemination
-                <input
-                  className="label__checkbox"
-                  type="radio"
-                  name="survey"
-                  onClick={() => this.setState({ selectedOption: "AI" })}
-                />
-                <span className="label__text">
-                  <span className="label__check">
-                    <i className="fa fa-check icon"></i>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            />
-            <div className="center">
-              <label className="label">
-                {" "}
-                Trans-Cervical Insemination
-                <input
-                  className="label__checkbox"
-                  type="radio"
-                  name="survey"
-                  onClick={() => this.setState({ selectedOption: "TCI" })}
-                />
-                <span className="label__text">
-                  <span className="label__check">
-                    <i className="fa fa-check icon"></i>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <link
-              rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            />
-            <div className="center">
-              <label className="label">
-                {" "}
-                Surgical Insemination
-                <input
-                  className="label__checkbox"
-                  type="radio"
-                  name="survey"
-                  onClick={() => this.setState({ selectedOption: "SI" })}
-                />
-                <span className="label__text">
-                  <span className="label__check">
-                    <i className="fa fa-check icon"></i>
-                  </span>
-                </span>
-              </label>
-            </div>
+      <Container className="form">
+        <Progress value="2" total="3" progress="ratio" />
+        {this.state.selectedOption}
+        <h1> How do you plan on breeding?</h1>
+        <Segment>
+          <Segment className="center">
+            <label className="label">
+              {" "}
+              Artificial Insemination
+              <Input
+                className="label__checkbox"
+                type="radio"
+                name="survey"
+                onClick={() => this.setState({ selectedOption: "AI" })}
+              />
+            </label>
+          </Segment>
+          <Segment className="center">
+            <label className="label">
+              {" "}
+              Trans-Cervical Insemination
+              <Input
+                className="label__checkbox"
+                type="radio"
+                name="survey"
+                onClick={() => this.setState({ selectedOption: "TCI" })}
+              />
+            </label>
+          </Segment>
+          <Segment className="center">
+            <label className="label">
+              {" "}
+              Surgical Insemination
+              <Input
+                className="label__checkbox"
+                type="radio"
+                name="survey"
+                onClick={() => this.setState({ selectedOption: "SI" })}
+              />
+            </label>
+          </Segment>
 
-            <div className="view1-btns">
-              <button
-                className="form-button"
-                onClick={() => this.changePage("Progesterone")}
-              >
-                Prev
-              </button>
-              <button
-                className="form-button"
-                onClick={() => this.changePage("View2")}
-              >
-                Next
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
+          <div className="view1-btns">
+            <Button
+              className="form-button"
+              onClick={() => this.changePage("Progesterone")}
+            >
+              Prev
+            </Button>
+            <Button
+              className="form-button"
+              onClick={() => this.changePage("View2")}
+            >
+              Get Results <Icon name="chart line" />
+            </Button>
+          </div>
+        </Segment>
+      </Container>
     );
   }
 }

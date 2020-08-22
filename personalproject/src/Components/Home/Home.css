@@ -16,4 +16,64 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.faq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+  width: 100%;
+  background-color: #F5F5F5;
+}
+
+.steps {
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+  width: 100%;
+  background-color: #F5F5F5;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+  width: 100%;
+  background-color: #A0BAB3;
+  height: 50px;
+}
+
+.about-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #515C67;
+  font-size: 15px;
+  font-family: aktiv-grotesk,arial,sans-serif;
+  width: 100%;
+  background-color: white;
+}
 /*# sourceMappingURL=Home.css.map */

@@ -34,9 +34,12 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_DOGS:
       return { ...state, dogs: [action.payload] };
+    case UPDATE_INSEM:
+      return {...state, insemination: action.payload };
     default:
       return state;
   }
+
 }
 
 // return { ...state, dogs: [...dogs, action.payload] };

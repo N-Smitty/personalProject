@@ -9,4 +9,4 @@ insert into users (
     $3,
     $4
 )
-returning first_name, last_name, email;
+returning first_name, last_name, email, user_id;

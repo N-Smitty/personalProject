@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Auth from "../Auth/Auth";
 import { connect } from "react-redux";
 import axios from "axios";
+import { Segment, Container, Button, Input, Icon, Label } from "semantic-ui-react";
+
 // import './Breeding.scss';
 
 class DogProfile extends Component {
@@ -22,53 +24,53 @@ class DogProfile extends Component {
 
   render() {
     return (
-      <div className="form">
-        <section>
+      <Container className="form">
+        <Segment>
           <h3>Step 2</h3>
           <span>
             Thank you for registering with us! Welcome to our bulldog family.
             Please fill out your Dam’s info.
           </span>
-        </section>
-        <section>
+        </Segment>
+        <Segment>
           <Link to="/">
-            <button>cancel dog profile</button>
+            <Button>cancel dog profile</Button>
           </Link>
-        </section>
+        </Segment>
         <div>
-          <section className="form-container">
+          <Segment className="form-container">
             <h4>Tell us about your dog</h4>
             <label>Name</label>
-            <input
+            <Input
               className="form-inputs"
               placeholder="Enter Name"
               onChange={(e) => this.setState({ name: e.target.value })}
-            ></input>
+            ></Input>
             <label>Age</label>
-            <input
+            <Input
               className="form-inputs"
               placeholder="Enter Age"
               onChange={(e) => this.setState({ age: e.target.value })}
-            ></input>
+            ></Input>
             <label>Breed</label>
-            <input
+            <Input
               className="form-inputs"
               placeholder="Enter Breed"
               onChange={(e) => this.setState({ breed: e.target.value })}
-            ></input>
+            ></Input>
             <label>Heat</label>
-            <input
+            <Input
               className="form-inputs"
               placeholder="Number of Heat"
               onChange={(e) => this.setState({ heat: e.target.value })}
-            ></input>
-          </section>
+            ></Input>
+          </Segment>
         </div>
-        <button>
+        <Button>
           Submit after it has been submitted direct to a page that says it added
           successfully and can be viewed in your account
-        </button>
-      </div>
+        </Button>
+      </Container>
     );
   }
 }

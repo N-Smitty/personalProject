@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Segment, Button, Input } from "semantic-ui-react";
 
 class Form extends Component {
   constructor(props) {
@@ -27,34 +28,42 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          name="first_name"
+      <Segment>
+        <Input type="file" name="editImage" />
+        <Input
+          icon="user"
+          iconPosition="left"
+          name="last_name"
           value={this.state.first_name}
           onChange={this.handleChange}
-          placeholder=""
-        />
-        <input
+          placeholder="First Name"
+        />{" "}
+        <Input
+          icon="user outline"
+          iconPosition="left"
           name="last_name"
           value={this.state.last_name}
           onChange={this.handleChange}
-          placeholder="last_name"
+          placeholder="Last Name"
         />{" "}
-        <input
+        <Input
+          icon="envelope outline"
+          iconPosition="left"
           name="email"
           value={this.state.email}
           onChange={this.handleChange}
-          placeholder=""
+          placeholder="john.smith@gmail.com"
         />{" "}
-        <input
+        <Input
+          icon="lock"
+          iconPosition="left"
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
-          placeholder="password"
+          placeholder="Password"
         />{" "}
-        <button onClick={this.editProfile}>Save Changes</button>
-        {/* <button>Save Changes</button> */}
-      </div>
+        <Button onClick={this.editProfile}>Save Changes</Button>
+      </Segment>
     );
   }
 }

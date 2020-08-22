@@ -2,20 +2,20 @@
 @import '../SASS/variables';
 
 .contact {
-    background-color: $cultured;
-    color: $blackCoral;
-    height: 100vh;
-    padding-bottom: 50px;
-    @include flexOne(space-evenly);
-}
-
-.contact-container {
     display: flex;
     flex-direction: column;
     line-height: 4rem;
     width: 50%;
     align-items: center;
-    float: right;
+    float: left;
+}
+
+.contact-container {
+    background-color: $cultured;
+    color: $blackCoral;
+    height: 100vh;
+    padding-bottom: 50px;
+    @include flexOne(space-evenly);
 }
 
 .contact-image {
@@ -24,4 +24,14 @@
     width: 30vw;
     float: left;
     margin-left: 100px;
+    background-repeat: no-repeat;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    line-height: 4rem;
+    width: 50%;
+    align-items: center;
+    float: right;
 }

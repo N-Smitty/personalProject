@@ -18,8 +18,10 @@ import View2 from "./Components/BreedingTools/view2";
 import AccountView from "./Components/Auth/AccountView";
 import DogProfile from "./Components/Auth/DogProfile";
 import DogList from "./Components/Auth/DogList";
-import Form from "./Components/Auth/Form";
+import FormComp from "./Components/Auth/FormComp";
 import EditProfile from "./Components/Auth/EditProfile";
+import ModalComp from './Components/BreedingTools/ModalComp';
+import DropdownComp from './Components/BreedingTools/DropdownComp';
 
 export default (
   <Switch>
@@ -42,6 +44,8 @@ export default (
     <Route path="/DogProfile" component={DogProfile} />
     <Route path="/EditProfile" component={EditProfile} />
     <Route path="/DogList" component={DogList} />
-    <Route path="/Form" component={Form} />
+    <Route path="/FormComp" component={FormComp} />
+    <Route path="/DropdownComp" component={DropdownComp} />
+
   </Switch>
 );

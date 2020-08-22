@@ -103,4 +103,18 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.login-btn {
+  background-color: #E8C4CB;
+  color: white;
+  border: none;
+  padding: 1px 6px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  height: 30px;
+  width: 105px;
+  border-radius: 5px;
+}
 /*# sourceMappingURL=Header.css.map */

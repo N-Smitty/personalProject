@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import { Menu, Container, Button, Icon } from "semantic-ui-react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutUser } from "../../Redux/userReducer";
 
 class Header extends Component {
   constructor(props) {
@@ -39,10 +42,16 @@ class Header extends Component {
     this.setState({ dropdownView: "" });
   };
 
+  logoutUser = () => {
+    console.log("hit head");
+    axios.post("/api/logout").then(this.props.logoutUser());
+  };
+
   render() {
+    console.log(this.props.user);
     return (
       <>
-        <header className="main-header">
+        <Menu className="main-header">
           <div>
             <Link to="/">
               <h1>Better Bulldogs Co</h1>
@@ -104,26 +113,40 @@ class Header extends Component {
             </Link>
           </nav>
           <nav>
-            <Link to='/AccountView'>
-            <span>Account</span>
+            <Link to="/AccountView">
+              <span>Account</span>
             </Link>
           </nav>
           {/* <div>
                 <button className='logout-btn' onClick={this.handleLogout}>Logout</button>
                 </div> */}
           <div>
-            <Link to="/Auth">
-              <button className="login-btn">Login</button>
-            </Link>
+            {!this.props.user ? (
+              <Link to="/Auth">
+                <Button className="login-btn">Login</Button>
+              </Link>
+            ) : (
+              <Button onClick={() => this.logoutUser()} className="login-btn">
+                Logout
+                <Icon name="power off" />
+              </Button>
+            )}
           </div>
-        </header>
+        </Menu>
         <div className="nav-bar__height"></div>
       </>
     );
   }
 }
 
-export default withRouter(Header);
+function mapStateToProps(state) {
+  console.log(state.user.user);
+  return {
+    user: state.user.user,
+  };
+}
+
+export default connect(mapStateToProps, { logoutUser })(withRouter(Header));
 
 {
   /* <nav className='about-dropdown' >
