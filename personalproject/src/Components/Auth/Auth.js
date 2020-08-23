@@ -81,6 +81,7 @@ class Auth extends Component {
   render() {
     // console.log(this.props);
     return (
+      <Segment>
       <div className="form-container">
         {/* <div>
         <img src={floral} alt="floral" className="floral-image" />
@@ -166,9 +167,9 @@ class Auth extends Component {
             </>
           )}
           <Form.Checkbox inline label="I agree to the terms and conditions" />
-          <Button color="teal">Submit</Button>
         </Form>
       </div>
+      </Segment>
     );
   }
 }

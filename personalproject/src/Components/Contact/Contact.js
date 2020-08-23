@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Contact.scss";
-import { Segment, Button, Container, Input, Icon } from "semantic-ui-react";
+import {
+  Segment,
+  Button,
+  Container,
+  Input,
+  Icon,
+  Form,
+} from "semantic-ui-react";
+import pic from "../Auth/Profilepic.jpg";
 
 class contact extends Component {
   constructor(props) {
@@ -18,9 +26,10 @@ class contact extends Component {
 
   render() {
     return (
-      <Container className="contact-container">
-        <div className="contact-image"></div>
-        <Segment className="contact">
+      <div className="contact-container">
+        <Segment float="left" className="contact">
+          {/* <img className="contact-image"></img> */}
+          <img src={pic} alt="profilePic" className="profile-image" />
           <h2>Contact Us</h2>
           <h5>We invite you to stay in contact with us!</h5>
           <p>Nathan Smith</p>
@@ -28,31 +37,66 @@ class contact extends Component {
           <p>better.bulldogs.co@gmail.com</p>
           <p>Instagram: @better.bulldogs.co</p>
           <div>
-            <Button color="facebook">
+            <Button
+              href="https://www.facebook.com/profile.php?id=100004277626574"
+              color="facebook"
+            >
               <Icon name="facebook" /> Facebook
             </Button>
-            <Button color="google plus">
-              <Icon name="google plus" /> Google Plus
-            </Button>
-            <Button color="instagram">
+            <Button
+              href="https://www.instagram.com/better.bulldogs.co/"
+              color="instagram"
+            >
               <Icon name="instagram" /> Instagram
             </Button>
           </div>
         </Segment>
-        <Segment className="contact-form">
-          <Input value={this.state.first_name} placeholder="First name">
-            First Name
-          </Input>
-          <Input value={this.state.last_name} placeholder="First name">Last Name</Input>
-          <Input value={this.state.email} placeholder="First name">Email</Input>
-          <Input  value={this.state.phone} placeholder="First name">Phone Number</Input>
-          <Input value={this.state.message} placeholder="First name">Message</Input>
-          <Button>
-            <Icon name="paper plane" />
-            Send Message
-          </Button>
+        <Segment float="right" className="contact-form">
+          <Form>
+            <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-first-name"
+                label="First name"
+                placeholder="First name"
+              />
+              <br />
+              <br />
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-last-name"
+                label="Last name"
+                placeholder="Last name"
+              />
+              <br /> <br />
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-first-name"
+                label="First name"
+                placeholder="email"
+              />{" "}
+              <br /> <br />
+              <Form.Group inline>
+                <Form.Field>
+                  <label>Phone Number</label>
+                  <Input placeholder="(xxx)" />
+                </Form.Field>
+                <Form.Field>
+                  <Input placeholder="xxx" />
+                </Form.Field>
+                <Form.Field>
+                  <Input placeholder="xxxx" />
+                </Form.Field>
+              </Form.Group>
+              <Form.TextArea label="message" placeholder="Message" />
+              <Button>
+                <Icon name="paper plane" />
+                Send Message
+              </Button>
+            </Form.Group>
+          </Form>
         </Segment>
-      </Container>
+      </div>
     );
   }
 }

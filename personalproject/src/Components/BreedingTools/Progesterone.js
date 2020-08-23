@@ -12,7 +12,7 @@ import {
   Container,
   Progress,
   Dropdown,
-  Icon
+  Icon,
 } from "semantic-ui-react";
 import DropdownComp from "./DropdownComp";
 
@@ -35,13 +35,13 @@ class progesterone extends Component {
 
   render() {
     return (
-      <Container className="form">
-                <Progress value='1' total='3' progress='ratio'/>
+      <Container text-align="center" className="form">
+        <Progress value="1" total="3" progress="ratio" />
 
         <Segment>
           <h1>Progesterone Tracker</h1>
           <p>Select dog</p>
-          <DropdownComp/>
+          <DropdownComp />
           <Input
             icon="chart bar outline"
             iconPosition="left"
@@ -51,30 +51,28 @@ class progesterone extends Component {
             placeholder="ng_ml"
           />{" "}
           <Input
-            icon="calendar alternate outline"
-            iconPosition="left"
             name="date_taken"
+            type="date"
             value={this.state.date_taken}
             onChange={this.handleChange}
             placeholder="Date Taken"
           />{" "}
           <Input
-            icon="clock outline"
-            iconPosition="left"
+            type='time'
             name="time_taken"
             value={this.state.time_taken}
             onChange={this.handleChange}
             placeholder="Time Taken"
           />
-            <Link to="/view1">
-              <Button
-                className="start-btn"
-                onClick={() => this.props.updateAboutDog({ ...this.state })}
-              >
-                Get Started
-                <Icon name='chevron circle right'/>
-              </Button>
-            </Link>
+          <Link to="/view1">
+            <Button
+              className="start-btn"
+              onClick={() => this.props.updateAboutDog({ ...this.state })}
+            >
+              Get Started
+              <Icon name="chevron circle right" />
+            </Button>
+          </Link>
         </Segment>
       </Container>
     );

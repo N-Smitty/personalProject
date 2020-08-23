@@ -10,6 +10,7 @@ import Contact from "./Components/Contact/Contact";
 import Gallery from "./Components/Litters/Gallery";
 import Stud from "./Components/BreedingTools/Stud";
 import Litters from "./Components/Litters/Pricing";
+import Available from "./Components/Litters/Available";
 import Auth from "./Components/Auth/Auth";
 import View1 from "./Components/BreedingTools/view1";
 import View2 from "./Components/BreedingTools/view2";
@@ -33,6 +34,7 @@ export default (
     <Route path="/PostResults" component={PostResults} />
     <Route path="/Contact" component={Contact} />
     <Route path="/Pricing" component={Litters} />
+    <Route path="/Available" component={Available} />
     <Route path="/Gallery" component={Gallery} />
     <Route path="/Stud" component={Stud} />
     <Route path="/Auth" component={Auth} />

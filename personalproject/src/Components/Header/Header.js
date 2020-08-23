@@ -85,11 +85,8 @@ class Header extends Component {
                 <Link to="/Gallery">
                   <span onClick={this.clearDropdown}>Gallery</span>
                 </Link>
-                {/* <Link to='/Available'>
-                <span  onClick={this.clearDropdown}>Available</span>
-                </Link> */}
-                <Link to="/Pricing">
-                  <span onClick={this.clearDropdown}>Pricing/Available</span>
+                <Link to="/Available">
+                  <span onClick={this.clearDropdown}>Available</span>
                 </Link>
               </div>
             ) : null}
@@ -110,6 +107,11 @@ class Header extends Component {
           <nav>
             <Link to="/Contact">
               <span>Contact</span>
+            </Link>
+          </nav>
+          <nav>
+            <Link to="/Pricing">
+              <span onClick={this.clearDropdown}>Reserve Puppy</span>
             </Link>
           </nav>
           <nav>

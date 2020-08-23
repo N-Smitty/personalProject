@@ -93,7 +93,6 @@ class AccountView extends Component {
                 <Segment className="breeding-info">
                   <Label>
                     <Button onClick={() => this.deleteDog(e.dog_id)}>
-                      delete dog profile
                       <Icon name="trash"/>
                     </Button>
                     <h1>{e.dog_name}</h1>
