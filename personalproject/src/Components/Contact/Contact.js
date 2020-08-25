@@ -26,7 +26,7 @@ class contact extends Component {
 
   render() {
     return (
-      <div className="contact-container">
+      <div class="ui horizontal segment">
         <Segment float="left" className="contact">
           {/* <img className="contact-image"></img> */}
           <img src={pic} alt="profilePic" className="profile-image" />

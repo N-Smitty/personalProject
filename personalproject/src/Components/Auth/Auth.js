@@ -82,17 +82,20 @@ class Auth extends Component {
     // console.log(this.props);
     return (
       <Segment>
-      <div className="form-container">
+      <div textAlign='center' className="form-container">
         {/* <div>
         <img src={floral} alt="floral" className="floral-image" />
       </div> */}
         {this.state.registerView ? (
           <>
+          <div>
             <Message
               attached
               header="Welcome to our site!"
               content="Fill out the form below to sign-up for a new account"
-            />
+              />
+              </div>
+
             <Form className="attached fluid segment">
               <Form.Group widths="equal">
                 <Form.Input
@@ -105,7 +108,7 @@ class Auth extends Component {
                   onChange={(e) => this.handleInput(e)}
                   placeholder="First Name"
                   type="text"
-                />
+                  />
                 <Form.Input
                   icon="user outline"
                   iconPosition="left"
@@ -116,7 +119,7 @@ class Auth extends Component {
                   value={this.state.last}
                   name="last"
                   onChange={(e) => this.handleInput(e)}
-                />
+                  />
               </Form.Group>
             </Form>
           </>
@@ -129,7 +132,7 @@ class Auth extends Component {
             value={this.state.email}
             name="email"
             onChange={(e) => this.handleInput(e)}
-          />
+            />
           <Form.Input
             icon="lock"
             iconPosition="left"
@@ -137,7 +140,7 @@ class Auth extends Component {
             value={this.state.password}
             name="password"
             onChange={(e) => this.handleInput(e)}
-          />
+            />
           {/* while the inputs are the same for login and register, the buttons need to switch. That's what this conditional rendering does below */}
           {this.state.registerView ? (
             <>
@@ -170,9 +173,9 @@ class Auth extends Component {
         </Form>
       </div>
       </Segment>
-    );
+      );
+    }
   }
-}
 let mapStateToProps = (state) => {
   return state;
 };

@@ -94,3 +94,8 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { updateInsemination })(view1);
+
+
+
+
+

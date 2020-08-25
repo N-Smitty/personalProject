@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "./Home.scss";
+import { Link } from "react-router-dom";
+
+// import "./Home.scss";
 import {
   Accordion,
   Icon,
@@ -28,7 +30,7 @@ export default class Home extends Component {
 
     return (
       <Container>
-        <img src={pic} alt="mainPhoto" className="image-holder" />
+        <img src={pic} alt="mainPhoto" class="ui massive centered image" />
 
         <h3>Steps</h3>
         <Step.Group>
@@ -113,6 +115,12 @@ export default class Home extends Component {
           <Grid>
             <Grid.Row>
               <Grid.Column width={5}>
+                <img
+                  src={pic}
+                  alt="mainPhoto"
+                  class="ui medium centered circular image"
+                  radius={360}
+                />
                 <h3>About Us</h3>
                 <p>
                   We are family owned breeders who take absolute pride in
@@ -125,6 +133,13 @@ export default class Home extends Component {
                 </p>{" "}
               </Grid.Column>
               <Grid.Column width={5}>
+                <img
+                  src={pic}
+                  alt="mainPhoto"
+                  class="ui medium centered circular image"
+                  radius={360}
+                />
+
                 <h3>Our Puppies</h3>
                 <p>
                   All puppies are bred with AKC Registered, fully health checked
@@ -137,6 +152,12 @@ export default class Home extends Component {
                 </p>
               </Grid.Column>
               <Grid.Column width={5}>
+                <img
+                  src={pic}
+                  alt="mainPhoto"
+                  class="ui medium centered circular image"
+                  radius={360}
+                />
                 <h3>Exotic DNA</h3>
                 <p>
                   During the breeding process here at Mamba Bulldogs we strive
@@ -155,21 +176,6 @@ export default class Home extends Component {
         <footer className="footer">
           <Icon name="copyright outline" /> BetterBulldogsCo. All Rights
           Reserved
-          <div>
-            <Button
-              href="https://www.facebook.com/profile.php?id=100004277626574"
-              color="facebook"
-          
-            >
-              <Icon name="facebook" /> Facebook
-            </Button>
-            <Button
-              href="https://www.instagram.com/better.bulldogs.co/"
-              color="instagram"
-            >
-              <Icon name="instagram" /> Instagram
-            </Button>
-          </div>
         </footer>
       </Container>
     );
