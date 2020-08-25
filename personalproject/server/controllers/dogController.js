@@ -89,13 +89,14 @@ module.exports = {
     await db.breeding_info(
       dog_id.dog_id,
       insemination_type,
-      ng_ml,
+      ng_ml
       // date_taken,
       // time_taken
     );
     return res.sendStatus(200);
   },
   getResults: async (req, res) => {
+    console.log(req.body);
     const { insemination, nanograms, dateTaken, timeTaken, dogId } = req.body;
     const db = req.app.get("db");
 
@@ -113,7 +114,7 @@ module.exports = {
   deleteDog: async (req, res) => {
     const db = req.app.get("db");
     const { dog_Id } = req.params;
-    await db.delete_breeding_info(dog_Id)
+    await db.delete_breeding_info(dog_Id);
     db.delete_dog(dog_Id).then((results) => {
       res.status(200).send(results);
     });

@@ -28,7 +28,6 @@ class view1 extends Component {
   render() {
     return (
       <Container className="form">
-        <Progress value="2" total="3" progress="ratio" />
         {this.state.selectedOption}
         <h1> How do you plan on breeding?</h1>
         <Segment>
@@ -84,6 +83,7 @@ class view1 extends Component {
             </Button>
           </div>
         </Segment>
+        <Progress value="2" total="3" progress="ratio" />
       </Container>
     );
   }

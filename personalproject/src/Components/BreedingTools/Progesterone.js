@@ -36,7 +36,6 @@ class progesterone extends Component {
   render() {
     return (
       <Container text-align="center" className="form">
-        <Progress value="1" total="3" progress="ratio" />
 
         <Segment>
           <h1>Progesterone Tracker</h1>
@@ -74,6 +73,7 @@ class progesterone extends Component {
             </Button>
           </Link>
         </Segment>
+        <Progress value="1" total="3" progress="ratio" />
       </Container>
     );
   }

@@ -30,7 +30,6 @@ class view2 extends Component {
   render() {
     return (
       <Container className="form">
-                        <Progress value='3' total='3' progress='ratio' success/>
         <Segment>
           <h4>Let's take a look at your results!</h4>
           <h5>
@@ -45,6 +44,7 @@ class view2 extends Component {
             <ModalComp />
           </div>
         </Segment>
+        <Progress value="3" total="3" progress="ratio" color="teal" />
       </Container>
     );
   }
