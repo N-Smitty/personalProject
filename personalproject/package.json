@@ -5,6 +5,8 @@
   "main": "server/index.js",
   "proxy": "http://localhost:4000",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.9.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -13,6 +15,7 @@
     "bcryptjs": "^2.4.3",
     "chart.js": "^2.9.3",
     "express-session": "^1.17.1",
+    "framer-motion": "^2.6.0",
     "massive": "^6.6.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
@@ -22,9 +25,11 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.5",
     "redux-promise-middleware": "^6.1.2",
     "route": "^0.2.5",
+    "semantic-ui-calendar": "0.0.8",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1",
     "switch": "0.0.0"

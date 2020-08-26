@@ -16,11 +16,13 @@ class view2 extends Component {
   }
   componentDidMount() {
     let data = {
-      insemination: this.props.insemination,
-      dateTaken: this.props.dateTaken,
-      timeTaken: this.props.timeTaken,
-      nanograms: this.props.nanograms,
+      dogId: this.props.dog.dogId,
+      insemination: this.props.dog.insemination,
+      dateTaken: this.props.dog.dateTaken,
+      timeTaken: this.props.dog.timeTaken,
+      nanograms: this.props.dog.nanograms,
     };
+    console.log("data: ", data)
     axios
       .put("/api/dog/update", data)
       .then((res) => this.setState({ results: res.data }))
@@ -36,7 +38,7 @@ class view2 extends Component {
             This method will no longer be effective. Consider Surgical
             Insemination.
           </h5>
-          <Chart />
+          <Chart data="results" />
           <div className="view2-btns">
             <Link to="/View1">
               <Button className="form-button">Prev</Button>

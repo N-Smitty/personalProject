@@ -45,7 +45,7 @@ app.post("/api/login", authCtrl.login);
 app.post("/api/logout", authCtrl.logout);
 app.get("/auth/session", authCtrl.getSession);
 //dog profile endpoints
-// app.put("/api/dog/update", dogCtrl.getResults);
+app.put("/api/dog/update", dogCtrl.getResults);
 app.get("/api/dog/profile", dogCtrl.getDogProfile);
 app.post("/api/createDog", dogCtrl.createDog);
 app.delete("/dog/delete/:dog_Id", dogCtrl.deleteDog);
@@ -53,6 +53,7 @@ app.put("/api/user/update", authCtrl.editProfile);
 // axios.post('/upload', authCtrl.uploadImage)
 app.get("/api/results", dogCtrl.getResults);
 // app.post('/api/payment', stripeCtrl.payment);
+// app.post('/api/payment', mainCtrl.completePayment);
 
 app.listen(SERVER_PORT, () => {
   console.log(`Natalie's server is tuned in on port ${SERVER_PORT}`);

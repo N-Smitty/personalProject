@@ -10,6 +10,7 @@ import {
   Icon,
   Label,
   Header,
+  Divider,
 } from "semantic-ui-react";
 import pic from "./Profilepic.jpg";
 import floral from "./floral.jpg";
@@ -83,11 +84,7 @@ class AccountView extends Component {
               </Container>
             </Container>
           </Segment>
-          <Segment>
-            <h3>Breeding Info</h3>
-            This will render a summary of the results that were given in the
-            form!
-          </Segment>
+
           <Label>
             {this.state.dogProfile.length > 0 &&
               this.state.dogProfile.map((e) => {
@@ -99,16 +96,16 @@ class AccountView extends Component {
                         <Icon name="trash" />
                       </Button>
                       <h1>{e.dog_name}</h1>
-                      <p>Dog Age: {e.dog_age}</p>
+                      <p>Age: {e.dog_age}</p>
                       <p>Breed: {e.breed}</p>
                       <p>Heat #: {e.heat_number}</p>
-                    </Label>
-                    <Label>
-                      <p>{e.dog_id}</p>
-                      <p>{e.insemination_type}</p>
-                      <p>{e.ng_ml}</p>
-                      <Icon name="clock">{e.date_taken}</Icon>
-                      <p>{e.time_taken}</p>
+                      <Divider />
+                      {/* <p>{e.dog_id}</p> */}
+                      <h6>Breeding Info:</h6>
+                      <p>Insemination:{e.insemination_type}</p>
+                      <p>Progesterone Level:{e.ng_ml}</p>
+                      <Icon name="clock">Date Taken:{e.date_taken}</Icon>
+                      <p>Time Taken:{e.time_taken}</p>
                     </Label>
                   </Segment>
                 );

@@ -11,6 +11,7 @@ import {
 import "./Breeding.scss";
 
 import { updateInsemination } from "../../Redux/dogReducer";
+import Axios from "axios";
 class view1 extends Component {
   constructor() {
     super();
@@ -20,7 +21,11 @@ class view1 extends Component {
     };
   }
 
-  changePage = (route) => {
+  componentDidMount() {
+    this.setState({ selectedOption: this.props.insemination });
+  }
+
+  changePage = (route, nav) => {
     this.props.updateInsemination(this.state.selectedOption);
     this.props.history.push(`/${route}`);
   };
@@ -71,13 +76,13 @@ class view1 extends Component {
           <div className="view1-btns">
             <Button
               className="form-button"
-              onClick={() => this.changePage("Progesterone")}
+              onClick={() => this.changePage("Progesterone", "prev")}
             >
               Prev
             </Button>
             <Button
               className="form-button"
-              onClick={() => this.changePage("View2")}
+              onClick={() => this.changePage("View2", "next")}
             >
               Get Results <Icon name="chart line" />
             </Button>
@@ -94,8 +99,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { updateInsemination })(view1);
-
-
-
-
-

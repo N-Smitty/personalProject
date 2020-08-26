@@ -95,20 +95,21 @@ module.exports = {
     );
     return res.sendStatus(200);
   },
+
   getResults: async (req, res) => {
-    console.log(req.body);
-    const { insemination, nanograms, dateTaken, timeTaken, dogId } = req.body;
+    console.log("body: ", req.body);
+    const { dogId, insemination, nanograms } = req.body;
     const db = req.app.get("db");
 
-    let results = db.breeding_info({
-      dog_id: dogId,
-      insemination_type: insemination,
-      ng_ml: nanograms,
-      date_taken: dateTaken,
-      time_taken: timeTaken,
-    });
+    await db.breeding_info([
+      dogId,
+      insemination,
+      nanograms,
+    ]);
 
-    let textResponse = breeding(insemination_type, ng_ml);
+    let results = await db.get_breeding_info([dogId])
+
+    let textResponse = breeding(insemination, nanograms);
     return res.status(200).send({ results, textResponse });
   },
   deleteDog: async (req, res) => {

@@ -41,33 +41,35 @@ heat_number
 2
 );
 
-select * from dog_profile
+select * from dog_profile;
 
 
 create table breeding_info (
 breeding_id serial primary key,
 insemination_type varchar(100) not null,
-ng_ml int not null,
+ng_ml decimal not null,
 date_taken date not null,
 time_taken time(0) not null
 );
 
 alter table breeding_info 
-add column dog_id int references dog_profile(dog_id)
+add column dog_id int references dog_profile(dog_id);
 
 insert into breeding_info (
+dog_id,
 insemination_type,
 ng_ml,
 date_taken,
 time_taken
 ) values (
+1,
 'Artificial Insemination',
 6,
 '2020-08-05',
 '09:22:00'
 );
 
-select * from breeding_info
+select * from breeding_info;
 
 
 SELECT dp.dog_id, dp.dog_name, dp.dog_age, dp.breed, dp.heat_number, bi.breeding_id, bi.insemination_type, bi.ng_ml, bi.date_taken, bi.time_taken

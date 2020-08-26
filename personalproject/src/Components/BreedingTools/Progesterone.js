@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Breeding.scss";
-import { updateAboutDog } from "../../Redux/dogReducer";
+import { updateDogInfo } from "../../Redux/dogReducer";
 import { connect } from "react-redux";
 import {
   Segment,
@@ -11,7 +11,6 @@ import {
   Input,
   Container,
   Progress,
-  Dropdown,
   Icon,
 } from "semantic-ui-react";
 import DropdownComp from "./DropdownComp";
@@ -20,6 +19,7 @@ class progesterone extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      dog_id: "",
       ng_ml: "",
       date_taken: "",
       time_taken: "",
@@ -36,11 +36,12 @@ class progesterone extends Component {
   render() {
     return (
       <Container text-align="center" className="form">
-
         <Segment>
           <h1>Progesterone Tracker</h1>
           <p>Select dog</p>
-          <DropdownComp />
+          <DropdownComp
+            updateParentWithDogId={(dogId) => this.setState({ dog_id: dogId })}
+          />
           <Input
             icon="chart bar outline"
             iconPosition="left"
@@ -57,7 +58,7 @@ class progesterone extends Component {
             placeholder="Date Taken"
           />{" "}
           <Input
-            type='time'
+            type="time"
             name="time_taken"
             value={this.state.time_taken}
             onChange={this.handleChange}
@@ -66,7 +67,7 @@ class progesterone extends Component {
           <Link to="/view1">
             <Button
               className="start-btn"
-              onClick={() => this.props.updateAboutDog({ ...this.state })}
+              onClick={() => this.props.updateDogInfo({ ...this.state })}
             >
               Get Started
               <Icon name="chevron circle right" />
@@ -87,4 +88,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { updateAboutDog })(progesterone);
+export default connect(mapStateToProps, { updateDogInfo })(progesterone);

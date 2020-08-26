@@ -82,4 +82,13 @@
 h6 {
   font-size: 20px;
 }
+
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /*# sourceMappingURL=Litters.css.map */
