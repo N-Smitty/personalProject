@@ -1,6 +1,7 @@
 const { default: Axios } = require("axios");
 
 require("dotenv").config();
+const path = require("path");
 const massive = require("massive"),
   express = require("express"),
   // stripe = require('stripe')('sk_test_51HCcjIEur65T7T8alLdHneECvLbf1XLqhEXGS2NZdA9tA19rP3RMzfdMDDjjKc7VtKvl2aly6s2fk3Qqqvv88jt000Yh2mwra7'),
@@ -11,7 +12,6 @@ const massive = require("massive"),
   authCtrl = require("./controllers/authController"),
   dogCtrl = require("./controllers/dogController"),
   // stripeCtrl = require('../server/controllers/stripe/stripeController'),
-
   session = require("express-session"),
   { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
@@ -54,6 +54,10 @@ app.put("/api/user/update", authCtrl.editProfile);
 app.get("/api/results", dogCtrl.getResults);
 // app.post('/api/payment', stripeCtrl.payment);
 // app.post('/api/payment', mainCtrl.completePayment);
+app.use(express.static(__dirname + "/../build"));
+app.get("*", (req, res) => {
+  res.sendfile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(SERVER_PORT, () => {
   console.log(`Natalie's server is tuned in on port ${SERVER_PORT}`);
