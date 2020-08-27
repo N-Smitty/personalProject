@@ -174,8 +174,8 @@ export default class Home extends Component {
         </Container>
         <Divider />
         <footer className="footer">
-          <Icon name="copyright outline" /> BetterBulldogsCo. All Rights
-          Reserved
+          {/* <Icon name="copyright outline" />  */}
+          copyright 2020. BetterBulldogsCo. All Rights Reserved
         </footer>
       </Container>
     );

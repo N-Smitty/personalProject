@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import store from './Redux/store';
 import {HashRouter, BrowserRouter} from 'react-router-dom';
-const Router = process.env.NODE_ENV === 'development' ? HashRouter: BrowserRouter
+const Router = process.env.NODE_ENV === 'development' ? HashRouter: BrowserRouter;
 
 
 ReactDOM.render(

@@ -1,69 +1,160 @@
 @import '../SASS/mixin';
 @import '../SASS/variables';
 
-.floral-image {
-    background-image: url('floral.jpg');
-    width: 100vw ;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.mainform{
+    margin: 100px;
+    padding: 100px;
+  }
 
-.form {
-    background-color: white;
-    color: $blackCoral;
-    height: 100vh;
-    padding-bottom: 50px;
-    @include flexOne(space-evenly);
-}
+  .signup{
+    text-align: center;
+  }
 
-.form-container {
-    // background-color: blue;
+// .floral-image {
+//     background-image: url('floral.jpg');
+//     width: 100vw ;
+//     height: 100vh;
+//     background-repeat: no-repeat;
+//     background-size: cover; 
+//     display: flex;
+//     // justify-content: space-between;
+//     align-items: center;
+// }
 
-}
+// .form {
+//     background-color: white;
+//     color: $blackCoral;
+//     height: 100vh;
+//     padding-bottom: 50px;
+//     // @include flexOne(space-evenly);
+// }
 
-.accountInfo {
-    @include column();
-    width: 40%;
-    font-weight: 600;
-    margin-top: 55px;
-}
+// .form-container {
+//     // background-color: blue;
 
-.form-button {
-    @include button();
-    font-size: 20px;
-    font-weight: 700;
-    height: 50px;
-    width: 105px;
-    border-radius: 5px;
-}
+// }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 75px;
-}
+// .accountInfo {
+//     @include column();
+//     width: 40%;
+//     font-weight: 600;
+//     margin-top: 55px;
+// }
 
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 360px;
-}
+// .form-button {
+//     @include button();
+//     font-size: 20px;
+//     font-weight: 700;
+//     height: 50px;
+//     width: 105px;
+//     border-radius: 5px;
+// }
 
-.profile {
-    // background-color: #C7D8D3;
-    @include column();
-    width: 350px;
-    font-weight: 600;
-    // margin-top: 55px;
-}
+// .button-container {
+//     display: flex;
+//     // justify-content: space-between;
+//     padding-top: 75px;
+// }
 
-.breeding-info {
-    // background-color: #C7D8D3;
-    @include column();
-    width: 350px;
-    font-weight: 600;
-}
+// .profile-image {
+//     width: 200px;
+//     height: 200px;
+//     border-radius: 360px;
+// }
+
+// .profile {
+//     // background-color: #C7D8D3;
+//     @include column();
+//     width: 350px;
+//     font-weight: 600;
+//     // margin-top: 55px;
+// }
+
+// .breeding-info {
+//     // background-color: #C7D8D3;
+//     @include column();
+//     width: 350px;
+//     font-weight: 600;
+// }
+
+
+
+// <div textAlign="center" className="form-container">
+// {this.state.registerView ? (
+// <>
+//   <Message
+//     attached
+//     header="Welcome to our site!"
+//     content="Fill out the form below to sign-up for a new account"
+//   />
+
+// <form class="ui form">
+// <div class="field">
+// <label>First Name</label>
+// <input    icon="user"
+//       iconPosition="left"
+//       fluid
+//       label="First Name"
+//       value={this.state.first}
+//       name="first"
+//       onChange={(e) => this.handleInput(e)}
+//       placeholder="First Name"
+//       type="text"/>
+// </div>
+// <div class="field">
+// <label>Last Name</label>
+// <input  icon="user outline"
+//       iconPosition="left"
+//       fluid
+//       label="Last Name"
+//       placeholder="Last Name"
+//       type="text"
+//       value={this.state.last}
+//       name="last"
+//       onChange={(e) => this.handleInput(e)}/>
+// </div>
+// </>
+
+// ) : null}
+
+// <div class="field">
+// <label> Email</label>
+// <input     icon="envelope outline"
+// iconPosition="left"
+// placeholder="john.smith@gmail.com"
+// value={this.state.email}
+// name="email"
+// onChange={(e) => this.handleInput(e)}/>
+// </div>
+// <div class="field">
+// <label>Password</label>
+// <input   icon="lock"
+// iconPosition="left"
+// placeholder="password"
+// value={this.state.password}
+// name="password"
+// onChange={(e) => this.handleInput(e)}/>
+// </div>
+// {this.state.registerView ? (
+// <>
+// </form>
+// <div class="field">
+// <div class="ui checkbox">
+// <input type="checkbox" tabindex="0" class="hidden"/>
+// <label>I agree to the Terms and Conditions</label>
+// </div>
+// </div>
+// <button class="ui button" type="submit" onClick={this.handleRegister} >Register</button>
+// <label>Already have an account?{" "}</label>
+// <span className="login-toggle" onClick={this.handleToggle}>Login here</span>
+
+// </>
+// ) : (
+// <>
+// <button class="ui button" type="submit" onClick={this.handleLogin} >Login</button>
+// <label>Don't have an account?{" "}</label>
+// <span className="register-toggle" onClick={this.handleToggle}>Register here</span>
+// </>
+// )}
+
+// </div>
