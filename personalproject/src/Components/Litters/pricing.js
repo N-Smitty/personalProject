@@ -15,9 +15,9 @@ import {
 class pricing extends Component {
   render() {
     return (
-      <Container>
+      <Container >
         <h1>Pricing</h1>
-        <Segment width={3} className="pricing-sheet">
+        <Segment style={{ maxWidth: 620 }} className="pricing-sheet">
           <h6>Place A Deposit</h6>
           <h5>Reserve your new puppy today!</h5>
           <p>

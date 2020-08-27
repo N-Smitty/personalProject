@@ -35,11 +35,11 @@ class progesterone extends Component {
 
   render() {
     return (
-      <Container text-align="center" className="form">
-        <Segment>
+      <Container text-align="center" class="ui form">
+        <Segment class="inline fields">
           <h1>Progesterone Tracker</h1>
           <p>Select dog</p>
-          <DropdownComp
+          <DropdownComp class='field'
             updateParentWithDogId={(dogId) => this.setState({ dog_id: dogId })}
           />
           <Input
@@ -51,6 +51,7 @@ class progesterone extends Component {
             placeholder="ng_ml"
           />{" "}
           <Input
+          class='field'
             name="date_taken"
             type="date"
             value={this.state.date_taken}
@@ -58,6 +59,7 @@ class progesterone extends Component {
             placeholder="Date Taken"
           />{" "}
           <Input
+          class='field'
             type="time"
             name="time_taken"
             value={this.state.time_taken}
@@ -68,12 +70,12 @@ class progesterone extends Component {
             <Button
               className="start-btn"
               onClick={() => this.props.updateDogInfo({ ...this.state })}
-            >
+              >
               Get Started
               <Icon name="chevron circle right" />
             </Button>
           </Link>
-        </Segment>
+              </Segment>
         <Progress value="1" total="3" progress="ratio" />
       </Container>
     );

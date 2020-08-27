@@ -18,9 +18,9 @@ function App(props) {
   // });
 
   return (
-    <Container>
+    <Container className='main'>
   <HashRouter>
-      <div className="App">
+      <div>
         <Header />
         {routes}
       </div>

@@ -14,31 +14,31 @@
     align-items: center;
 }
 
-.faq{
-    @include flexOne(space-evenly);
-    @include font();
-    width: 100%;
-    background-color:$cultured;
-}
+// .faq{
+//     @include flexOne(space-evenly);
+//     @include font();
+//     width: 100%;
+//     background-color:$cultured;
+// }
 
-.steps {
-    @include font();
-    width: 100%;
-    background-color:$cultured;
-}
+// .steps {
+//     @include font();
+//     width: 100%;
+//     background-color:$cultured;
+// }
 
 
-.footer{
-    @include flexOne(space-evenly);
-    @include font();
-    width: 100%;
-    background-color: #A0BAB3;
-    height: 50px;
-}
+// .footer{
+//     @include flexOne(space-evenly);
+//     @include font();
+//     width: 100%;
+//     background-color: #A0BAB3;
+//     height: 50px;
+// }
 
-.about-us {
-    @include flexOne(space-evenly);
-    @include font();
-    width: 100%;
-    background-color: white;
-}
+// .about-us {
+//     @include flexOne(space-evenly);
+//     @include font();
+//     width: 100%;
+//     background-color: white;
+// }

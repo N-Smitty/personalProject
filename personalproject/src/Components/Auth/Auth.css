@@ -1,4 +1,13 @@
-.floral-image {
+.mainform {
+  margin: 100px;
+  padding: 100px;
+}
+
+.signup {
+  text-align: center;
+}
+
+/* .floral-image {
   background-image: url("floral.jpg");
   width: 100vw;
   height: 100vh;
@@ -99,5 +108,5 @@
   line-height: 4rem;
   width: 350px;
   font-weight: 600;
-}
+} */
 /*# sourceMappingURL=Auth.css.map */

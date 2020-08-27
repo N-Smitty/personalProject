@@ -14,7 +14,6 @@ export default class Available extends Component {
   render() {
     return (
       <Container>
-        <Segment>
           <h1>Available Puppies</h1>
           <Grid celled floated="left" width={5}>
             <Grid.Row>
@@ -67,8 +66,6 @@ export default class Available extends Component {
         <Link to="/Pricing">
           <Button color='teal' onClick={this.clearDropdown}>Reserve your puppy</Button>
         </Link>
-        <Label as='a' content='Message us' icon='mail' />
-        </Segment>
         <Grid celled>
           <Grid.Row>
             <Grid.Column width={3}>

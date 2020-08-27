@@ -17,66 +17,66 @@ import {
 import "semantic-ui-css/semantic.min.css";
 
 class Auth extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   //Question 2 on the readme can be answered by creating inputs on the client-side and state items to track those inputs. The information that is input for this.state.email and this.state.password make it possible for the user to send the information the server needs to create an account, or log a user in.
-  //   this.state = {
-  //     first: "",
-  //     last: "",
-  //     email: "",
-  //     password: "",
-  //     //registerView will allow this component between a login and register view, meaning I don't have to create separate components for login and register.
-  //     registerView: false,
-  //     //user: {}
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    //Question 2 on the readme can be answered by creating inputs on the client-side and state items to track those inputs. The information that is input for this.state.email and this.state.password make it possible for the user to send the information the server needs to create an account, or log a user in.
+    this.state = {
+      first: "",
+      last: "",
+      email: "",
+      password: "",
+      //registerView will allow this component between a login and register view, meaning I don't have to create separate components for login and register.
+      registerView: false,
+      //user: {}
+    };
+  }
 
-  // handleInput = (e) => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+  handleInput = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  // //handleRegisters purpose is to request the register endpoint on the server. The register handler function needs the user to send an email and a password on a req.body object.
-  // handleRegister = () => {
-  //   let body = this.state;
-  //   delete body["registerView"];
-  //   axios
-  //     .post("/api/register", body)
-  //     //Once a response is received(remember, the response is the users active session), that information should be placed on either local state or reduxState, so that it can be used throughout the application.
-  //     .then((res) => {
-  //       this.props.updateUser(res.data);
-  //       //Place user information somewhere(state, reduxState)
-  //       //React-router-dom moves the user to dash
-  //       this.props.history.push("/Form");
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  //handleRegisters purpose is to request the register endpoint on the server. The register handler function needs the user to send an email and a password on a req.body object.
+  handleRegister = () => {
+    let body = this.state;
+    delete body["registerView"];
+    axios
+      .post("/api/register", body)
+      //Once a response is received(remember, the response is the users active session), that information should be placed on either local state or reduxState, so that it can be used throughout the application.
+      .then((res) => {
+        this.props.updateUser(res.data);
+        //Place user information somewhere(state, reduxState)
+        //React-router-dom moves the user to dash
+        this.props.history.push("/Form");
+      })
+      .catch((err) => console.log(err));
+  };
 
-  // //handleToggle toggles the components view between login and register.
-  // handleToggle = () => {
-  //   this.setState({
-  //     registerView: !this.state.registerView,
-  //   });
-  // };
+  //handleToggle toggles the components view between login and register.
+  handleToggle = () => {
+    this.setState({
+      registerView: !this.state.registerView,
+    });
+  };
 
-  // //handleLogin has the same purpose as register, but for users that already have an account. Like handleRegister, an email and password need to be sent to the server in a req.body.
-  // handleLogin = () => {
-  //   axios
-  //     .post("/api/login", {
-  //       email: this.state.email,
-  //       password: this.state.password,
-  //     })
-  //     //Like handleRegister, the response is the active users session. This needs to be placed on state or reduxState so it can be used throughout the application.
-  //     .then((res) => {
-  //       console.log(res.data, "daterrr");
-  //       //Place user object on state or reduxState
-  //       this.props.updateUser(res.data);
-  //       //Route user to main page
-  //       this.props.history.push("/Progesterone");
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  //handleLogin has the same purpose as register, but for users that already have an account. Like handleRegister, an email and password need to be sent to the server in a req.body.
+  handleLogin = () => {
+    axios
+      .post("/api/login", {
+        email: this.state.email,
+        password: this.state.password,
+      })
+      //Like handleRegister, the response is the active users session. This needs to be placed on state or reduxState so it can be used throughout the application.
+      .then((res) => {
+        console.log(res.data, "daterrr");
+        //Place user object on state or reduxState
+        this.props.updateUser(res.data);
+        //Route user to main page
+        this.props.history.push("/Progesterone");
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
     // console.log(this.props);
@@ -162,6 +162,7 @@ class Auth extends Component {
               ) : (
                 <>
                   <Button
+                  
                     className="form-button"
                     color="inverted green"
                     onClick={this.handleLogin}

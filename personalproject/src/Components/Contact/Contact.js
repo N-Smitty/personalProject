@@ -26,10 +26,10 @@ class contact extends Component {
 
   render() {
     return (
-      <div class="ui horizontal segment">
-        <Segment float="left" className="contact">
+      <div class="mainForm">
+        <Segment style={{ maxWidth: 500 }} float="left" className="contact">
           {/* <img className="contact-image"></img> */}
-          <img src={pic} alt="profilePic" className="profile-image" />
+          <img src={pic} alt="profilePic" class=" ui small circular image" />
           <h2>Contact Us</h2>
           <h5>We invite you to stay in contact with us!</h5>
           <p>Nathan Smith</p>
@@ -51,44 +51,33 @@ class contact extends Component {
             </Button>
           </div>
         </Segment>
-        <Segment float="right" className="contact-form">
+        <Segment
+          style={{ maxWidth: 500 }}
+          float="right"
+          className="contact-form"
+        >
           <Form>
             <Form.Group widths="equal">
               <Form.Input
                 fluid
                 id="form-subcomponent-shorthand-input-first-name"
-                label="First name"
-                placeholder="First name"
+                label="First Name"
+                placeholder="First Name"
               />
-              <br />
-              <br />
               <Form.Input
                 fluid
                 id="form-subcomponent-shorthand-input-last-name"
-                label="Last name"
-                placeholder="Last name"
+                label="Last Name"
+                placeholder="Last Name"
               />
-              <br /> <br />
-              <Form.Input
-                fluid
-                id="form-subcomponent-shorthand-input-first-name"
-                label="First name"
-                placeholder="email"
-              />{" "}
-              <br /> <br />
+              <Form.Input fluid label="Email" placeholder="Email" />{" "}
               <Form.Group inline>
                 <Form.Field>
                   <label>Phone Number</label>
-                  <Input placeholder="(xxx)" />
-                </Form.Field>
-                <Form.Field>
-                  <Input placeholder="xxx" />
-                </Form.Field>
-                <Form.Field>
-                  <Input placeholder="xxxx" />
+                  <Input placeholder="(xxx)-xxx-xxxx" />
                 </Form.Field>
               </Form.Group>
-              <Form.TextArea label="message" placeholder="Message" />
+              <Form.TextArea label="Message" placeholder="Message..." />
               <Button>
                 <Icon name="paper plane" />
                 Send Message

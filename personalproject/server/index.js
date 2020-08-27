@@ -56,7 +56,7 @@ app.get("/api/results", dogCtrl.getResults);
 // app.post('/api/payment', mainCtrl.completePayment);
 app.use(express.static(__dirname + "/../build"));
 app.get("*", (req, res) => {
-  res.sendfile(path.join(__dirname, "../build/index.html"));
+  res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
 app.listen(SERVER_PORT, () => {

@@ -47,7 +47,7 @@ class AccountView extends Component {
   render() {
     return (
       <div class="ui horizontal segments">
-        <Container class="form">
+        <Segment class="form">
           {/* <img src={floral} alt="floral" className="floral-image" /> */}
           <Header as="h2">
             <Icon name="settings" />
@@ -56,7 +56,6 @@ class AccountView extends Component {
               <Header.Subheader>Manage your preferences</Header.Subheader>
             </Header.Content>
           </Header>
-          <Segment className="accountInfo">
             <Container className="profile">
               <img src={pic} alt="profilePic" className="profile-image" />
               <div>Name</div>
@@ -83,15 +82,14 @@ class AccountView extends Component {
                 </Button>
               </Container>
             </Container>
-          </Segment>
 
-          <Label>
+          <Segment>
+            Dog Profile:
             {this.state.dogProfile.length > 0 &&
               this.state.dogProfile.map((e) => {
                 console.log(e);
                 return (
                   <Segment className="breeding-info">
-                    <Label>
                       <Button onClick={() => this.deleteDog(e.dog_id)}>
                         <Icon name="trash" />
                       </Button>
@@ -106,12 +104,11 @@ class AccountView extends Component {
                       <p>Progesterone Level:{e.ng_ml}</p>
                       <Icon name="clock">Date Taken:{e.date_taken}</Icon>
                       <p>Time Taken:{e.time_taken}</p>
-                    </Label>
                   </Segment>
                 );
               })}
-          </Label>
-        </Container>
+          </Segment>
+        </Segment>
       </div>
     );
   }
